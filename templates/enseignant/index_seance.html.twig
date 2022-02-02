@@ -3,9 +3,18 @@
 {% block title %}Enseignant - Séance{% endblock %}
 
 {% block body %}
-
-    <div>
-        <h1>Page accueil enseignant index séance</h1>
-
+    {% include('_nav_enseignant.html.twig') %}
+    <div class="content">
+        <h2>Bienvenue sur votre espace enseignant</h2>
+        <hr>
+        <div class="container">
+            <div class="row row-cols-4">
+                <div class="col">Ajouter une séance</div>
+                <div class="col">Consulter une séance</div>
+                <div class="col">Créer une classe</div>
+                <div class="col">Voir mes classes</div>
+            </div>
+        </div>
     </div>
+
 {% endblock %}
