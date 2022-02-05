@@ -1,0 +1,17 @@
+#groupIndex{
+    border: 2px solid #0b87cd;
+    background-color: #b9e1ff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2%;
+    margin: 2% 32% 2% 32%;
+}
+
+.separateBlock{
+    border-top: 4px solid #48186a;
+    margin: 2% 30% 2% 30%;
+}
+
+h1{
+    text-align: center;
+}

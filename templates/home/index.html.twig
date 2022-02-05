@@ -3,7 +3,22 @@
 {% block title %}Bonjour{% endblock %}
 
 {% block body %}
-    <div>
-        <a href="{{ path('enseignant/index_seance') }}">Test page</a>
-    </div>
+    <header>
+        <h1>Bienvenue</h1>
+        <hr class="separateBlock"/>
+    </header>
+    <main>
+        <fieldset id="groupIndex">
+            <h2>Je suis :</h2>
+            <div class="col justify-content-around d-flex flex-column">
+                <div>
+                    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Un élève</a>
+                </div>
+                <br>
+                <div>
+                    <a href="{{ path('app_login') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Un enseignant</a>
+                </div>
+            </div>
+        </fieldset>
+    </main>
 {% endblock %}

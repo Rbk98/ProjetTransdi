@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte enseignant{% endblock %}
+
+{% block body %}
+    <h1>Créer mon compte </h1>
+
+    {{ include('utilisateur/_form.html.twig') }}
+
+    <a href="{{ path('home') }}">Retour à la page d'accueil</a>
+{% endblock %}
