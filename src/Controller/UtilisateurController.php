@@ -17,15 +17,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class UtilisateurController extends AbstractController
 {
-    /**
-     * @Route("/", name="utilisateur_index", methods={"GET"})
-     */
-    public function index(UtilisateurRepository $utilisateurRepository): Response
-    {
-        return $this->render('utilisateur/index.html.twig', [
-            'utilisateurs' => $utilisateurRepository->findAll(),
-        ]);
-    }
 
     /**
      * @Route("/new", name="utilisateur_new", methods={"GET","POST"})
@@ -44,7 +35,7 @@ class UtilisateurController extends AbstractController
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 
-            return $this->redirectToRoute('utilisateur_index');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('utilisateur/new.html.twig', [
@@ -74,7 +65,7 @@ class UtilisateurController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('utilisateur_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('utilisateur/edit.html.twig', [
@@ -93,6 +84,6 @@ class UtilisateurController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('utilisateur_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
     }
 }

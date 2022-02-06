@@ -19,7 +19,7 @@ class EnseignantController extends AbstractController
     }
 
     /**
-     * @Route("/enseignant/seance", name="enseignant")
+     * @Route("/enseignant/seance", name="enseignant_seance")
      */
     public function seance(): Response
     {
