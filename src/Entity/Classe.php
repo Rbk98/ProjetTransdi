@@ -49,6 +49,11 @@ class Classe
      */
     private $eleves;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Ecole::class, inversedBy="classes")
+     */
+    private $ecole;
+
     public function __construct()
     {
         $this->eleves = new ArrayCollection();
@@ -142,6 +147,18 @@ class Classe
         if ($this->eleves->removeElement($eleve)) {
             $eleve->removeClasse($this);
         }
+
+        return $this;
+    }
+
+    public function getEcole(): ?Ecole
+    {
+        return $this->ecole;
+    }
+
+    public function setEcole(?Ecole $ecole): self
+    {
+        $this->ecole = $ecole;
 
         return $this;
     }
