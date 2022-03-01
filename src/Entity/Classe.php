@@ -60,9 +60,15 @@ class Classe
      */
     private $enseignant;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Seance::class, mappedBy="classe")
+     */
+    private $seances;
+
     public function __construct()
     {
         $this->eleves = new ArrayCollection();
+        $this->seances = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -177,6 +183,33 @@ class Classe
     public function setEnseignant(?Enseignant $enseignant): self
     {
         $this->enseignant = $enseignant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Seance[]
+     */
+    public function getSeances(): Collection
+    {
+        return $this->seances;
+    }
+
+    public function addSeance(Seance $seance): self
+    {
+        if (!$this->seances->contains($seance)) {
+            $this->seances[] = $seance;
+            $seance->addClasse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSeance(Seance $seance): self
+    {
+        if ($this->seances->removeElement($seance)) {
+            $seance->removeClasse($this);
+        }
 
         return $this;
     }
