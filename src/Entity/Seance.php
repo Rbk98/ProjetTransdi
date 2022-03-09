@@ -49,9 +49,21 @@ class Seance
      */
     private $classe;
 
+    /**
+     * @ORM\OneToMany(targetEntity=DebutResultat::class, mappedBy="seance")
+     */
+    private $debutResultats;
+
+    /**
+     * @ORM\OneToMany(targetEntity=FinResultat::class, mappedBy="seance")
+     */
+    private $finResultats;
+
     public function __construct()
     {
         $this->classe = new ArrayCollection();
+        $this->debutResultats = new ArrayCollection();
+        $this->finResultats = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,6 +151,66 @@ class Seance
     public function removeClasse(Classe $classe): self
     {
         $this->classe->removeElement($classe);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|DebutResultat[]
+     */
+    public function getDebutResultats(): Collection
+    {
+        return $this->debutResultats;
+    }
+
+    public function addDebutResultat(DebutResultat $debutResultat): self
+    {
+        if (!$this->debutResultats->contains($debutResultat)) {
+            $this->debutResultats[] = $debutResultat;
+            $debutResultat->setSeance($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDebutResultat(DebutResultat $debutResultat): self
+    {
+        if ($this->debutResultats->removeElement($debutResultat)) {
+            // set the owning side to null (unless already changed)
+            if ($debutResultat->getSeance() === $this) {
+                $debutResultat->setSeance(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FinResultat[]
+     */
+    public function getFinResultats(): Collection
+    {
+        return $this->finResultats;
+    }
+
+    public function addFinResultat(FinResultat $finResultat): self
+    {
+        if (!$this->finResultats->contains($finResultat)) {
+            $this->finResultats[] = $finResultat;
+            $finResultat->setSeance($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFinResultat(FinResultat $finResultat): self
+    {
+        if ($this->finResultats->removeElement($finResultat)) {
+            // set the owning side to null (unless already changed)
+            if ($finResultat->getSeance() === $this) {
+                $finResultat->setSeance(null);
+            }
+        }
 
         return $this;
     }
