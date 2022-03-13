@@ -3,3 +3,53 @@
 *{
     font-family: "Roboto", monospace;
 }
+
+.titleUser{
+    background-color: rgba(205, 175, 255, 0.66);
+    border: 2px solid rgba(91, 59, 149, 0.83);
+    text-align: center;
+    color: #612a8d;
+    width: 18%;
+    border-radius: 12px;
+    margin: 2% auto;
+}
+
+.formUser{
+    border: 2px solid rgba(11, 135, 205, 0.83);
+    background-color: rgba(185, 225, 255, 0.84);
+    margin: 4% auto;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    padding: 2%;
+    width: 50%;
+}
+
+#divBlue{
+    min-height: 80vh;
+    background-color: #5baedb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#divOrange{
+    min-height: 80vh;
+    background-color: #ff994a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#divGreen{
+    min-height: 80vh;
+    background-color: #65c963;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#divPurple{
+    min-height: 80vh;
+    background-color: #e37fc4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

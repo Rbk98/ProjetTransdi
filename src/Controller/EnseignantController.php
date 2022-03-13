@@ -27,4 +27,6 @@ class EnseignantController extends AbstractController
             'controller_name' => 'EnseignantController',
         ]);
     }
+
+
 }

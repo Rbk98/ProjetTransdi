@@ -14,19 +14,24 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Se connecter</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <div class="titleUser">
+        <h1 class="h3 fw-normal p-1">Connexion</h1>
+    </div>
+    <fieldset class="formUser">
+        <label for="inputEmail">E-mail :</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
+        <label for="inputPassword">Mot de passe :</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
-    <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
-    </button>
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}">
+        <button class="btn btn-lg btn-primary mt-4" type="submit">
+            Se connecter
+        </button>
+    </fieldset>
+
 </form>
     <div>
-        <p>Vous n'avez pas de compte ? <a href="{{ path('utilisateur_new') }}">Créer son compte</a></p>
+        <p class="text-center">Vous n'avez pas de compte ? <a href="{{ path('utilisateur_new') }}">Créer son compte</a></p>
     </div>
 {% endblock %}

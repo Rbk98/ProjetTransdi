@@ -3,9 +3,14 @@
 {% block title %}Créer un compte enseignant{% endblock %}
 
 {% block body %}
-    <h1>Créer mon compte </h1>
+    <div class="titleUser">
+        <h1 class="h3 fw-normal p-1">Créer mon compte</h1>
+    </div>
+    <fieldset class="formUser">
+        {{ include('utilisateur/_form.html.twig') }}
+    </fieldset>
+    <div>
+        <p class="text-center"><a href="{{ path('home') }}">Retour à la page d'accueil</a></p>
+    </div>
 
-    {{ include('utilisateur/_form.html.twig') }}
-
-    <a href="{{ path('home') }}">Retour à la page d'accueil</a>
 {% endblock %}
