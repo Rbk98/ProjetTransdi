@@ -1,9 +1,9 @@
-<nav style="padding: 0;" class="navbar navbar-expand-lg navbar-light bg-light">
-    <div style="background-color: #563d7c;" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+    <div class="navEnseignant collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link text-white" href="#">Ajouter séance <span class="sr-only"></span></a>
+            <a class="nav-item nav-link text-white" href="{{ path('seance_new') }}">Ajouter séance <span class="sr-only"></span></a>
             <a class="nav-item nav-link text-white" href="#">Consulter séance</a>
-            <a class="nav-item nav-link text-white" href="#">Créer classe</a>
+            <a class="nav-item nav-link text-white" href="{{ path('classe_new') }}">Créer classe</a>
             <a class="nav-item nav-link text-white" href="#">Voir classes</a>
         </div>
     </div>
