@@ -1,15 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter une séance{% endblock %}
+{% block title %}Consulter une séance{% endblock %}
 
 {% block body %}
     {% include('enseignant/_nav_enseignant.html.twig') %}
 
-    <h1>Créer une nouvelle séance</h1>
-
-    {{ include('seance/_form.html.twig') }}
+    <h1>Consulter séance</h1>
 
     <a href="{{ path('enseignant') }}">Retour au menu</a>
-
-
 {% endblock %}

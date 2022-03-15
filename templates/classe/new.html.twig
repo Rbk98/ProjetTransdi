@@ -3,8 +3,9 @@
 {% block title %}New Classe{% endblock %}
 
 {% block body %}
-    <h1>Create new Classe</h1>
+    {% include('enseignant/_nav_enseignant.html.twig') %}
 
+    <h1>Create new Classe</h1>
     {{ include('classe/_form.html.twig') }}
 
     <a href="{{ path('enseignant') }}">Retour au menu</a>
