@@ -10,10 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/seance")
+ */
 class SeanceController extends AbstractController
 {
     /**
-     * @Route("/seance", name="seance")
+     * @Route("/", name="seance")
      */
     public function index(): Response
     {
@@ -24,7 +27,7 @@ class SeanceController extends AbstractController
 
 
     /**
-     * @Route("/Ajouter-seance", name="seance_new", methods={"GET","POST"})
+     * @Route("/ajouter-seance", name="seance_new", methods={"GET","POST"})
      */
     public function new(Request $request, EnseignantRepository $enseignantRepository): Response
     {

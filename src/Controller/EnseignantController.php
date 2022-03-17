@@ -6,10 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/enseignant")
+ */
 class EnseignantController extends AbstractController
 {
     /**
-     * @Route("/enseignant", name="enseignant")
+     * @Route("/", name="enseignant")
      */
     public function index(): Response
     {
@@ -19,7 +22,7 @@ class EnseignantController extends AbstractController
     }
 
     /**
-     * @Route("/enseignant/seance", name="enseignant_seance")
+     * @Route("/seance", name="enseignant_seance")
      */
     public function seance(): Response
     {
